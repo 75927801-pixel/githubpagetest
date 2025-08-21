@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Diseño de Software</title>
+    <style>
+        /* Variables de colores y fuentes */
+        :root {
+            --color-primary: #2c3e50;
+            --color-secondary: #3498db;
+            --color-accent: #e74c3c;
+            --color-light: #ecf0f1;
+            --color-dark: #2c3e50;
+            --color-success: #2ecc71;
+            --color-warning: #f39c12;
+            --color-background: #f9f9f9;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--color-dark);
+            background-color: var(--color-background);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Encabezados */
+        h1, h2, h3, h4 {
+            margin-bottom: 0.8em;
+            color: var(--color-primary);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--color-secondary);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 1.5rem;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--color-light);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: var(--color-secondary);
+        }
+
+        /* Tarjetas y secciones */
+        .intro {
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Esquema de colores para diferentes secciones */
+        .security { border-top: 4px solid var(--color-accent); }
+        .principles { border-top: 4px solid var(--color-success); }
+        .architecture { border-top: 4px solid var(--color-secondary); }
+        .coding { border-top: 4px solid var(--color-warning); }
+        .documentation { border-top: 4px solid #9b59b6; }
+        .scalability { border-top: 4px solid #16a085; }
+        .ai { border-top: 4px solid #d35400; }
+
+        /* Listas */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li:before {
+            content: "•";
+            color: var(--color-secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .sub-list {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        .sub-list li:before {
+            content: "◦";
+        }
+
+        /* Referencias */
+        .references {
+            background-color: var(--color-light);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        .references h2 {
+            border-bottom: none;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Elementos decorativos */
+        .highlight {
+            background-color: rgba(52, 152, 219, 0.1);
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .badge-primary {
+            background-color: var(--color-secondary);
+            color: white;
+        }
+
+        .badge-secondary {
+            background-color: var(--color-success);
+            color: white;
+        }
+
+        .quote {
+            border-left: 4px solid var(--color-secondary);
+            padding-left: 15px;
+            font-style: italic;
+            margin: 15px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Diseño de Software: Mejores Prácticas</h1>
+        </header>
+
+        <section class="intro">
+            <h2>¿Qué es el Diseño de Software?</h2>
+            <p>El diseño de software es una actividad fundamental en el ciclo de vida del desarrollo, donde se planifica cómo resolver un problema a través del software. Implica tomar decisiones sobre almacenamiento de datos, interfaces de usuario, comunicación del sistema y delimitación de responsabilidades entre componentes.</p>
+        </section>
+
+        <section>
+            <h2>Enfoques de Diseño</h2>
+            <div class="card-container">
+                <div class="card architecture">
+                    <div class="card-header">
+                        <div class="card-icon">A</div>
+                        <h3>Arquitectura Limpia</h3>
+                    </div>
+                    <p>Enfoque que se especializa en calidad, mantenibilidad y evolución del software. Separa las preocupaciones del negocio de las técnicas, basándose en principios SOLID y patrones de diseño.</p>
+                </div>
+
+                <div class="card architecture">
+                    <div class="card-header">
+                        <div class="card-icon">D</div>
+                        <h3>DDD (Domain-Driven Design)</h3>
+                    </div>
+                    <p>Enfoque de modelado basado en la realidad empresarial. Describe áreas de problemas como "Contextos Delimitados" y enfatiza un lenguaje común (lenguaje ubicuo).</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Seguridad desde el Diseño</h2>
+            <div class="card security">
+                <ul>
+                    <li><span class="highlight">Integración temprana de seguridad</span>: La seguridad debe ser un objetivo empresarial fundamental</li>
+                    <li><span class="highlight">Asumir la responsabilidad</span>: Mejorar los resultados de seguridad de los clientes</li>
+                    <li><span class="highlight">Productos "seguros por defecto"</span>: Resistentes desde el primer momento sin costo adicional</li>
+                    <li><span class="highlight">Priorizar la seguridad</span>: Migrar a lenguajes más seguros y priorizar características de protección</li>
+                    <li><span class="highlight">Defensa en profundidad</span>: Diseñar infraestructura para que el compromiso de un control no afecte todo el sistema</li>
+                    <li><span class="highlight">Eliminar contraseñas predeterminadas</span>: Exigir contraseñas seguras durante la instalación</li>
+                    <li><span class="highlight">Inicio de sesión único (SSO)</span>: Implementar con estándares abiertos modernos</li>
+                    <li><span class="highlight">Registro seguro</span>: Proporcionar registros de auditoría de alta calidad</li>
+                    <li><span class="highlight">Seguridad orientada al futuro</span>: Priorizar seguridad sobre compatibilidad con versiones anteriores</li>
+                    <li><span class="highlight">Reducción de guías de refuerzo</span>: Integrar configuraciones seguras como predeterminadas</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Principios de Diseño</h2>
+            <div class="card principles">
+                <h3>Modularidad</h3>
+                <p>Dividir el sistema en componentes independientes para facilitar ampliación, reemplazo o actualización.</p>
+                
+                <h3>Principios SOLID</h3>
+                <ul>
+                    <li><span class="badge badge-primary">SRP</span> Responsabilidad Única: Una clase debe tener solo una razón para cambiar</li>
+                    <li><span class="badge badge-primary">OCP</span> Abierto/Cerrado: Las entidades deben estar abiertas para extensión pero cerradas para modificación</li>
+                    <li><span class="badge badge-primary">LSP</span> Sustitución de Liskov: Los objetos deben ser reemplazables por instancias de sus subtipos</li>
+                    <li><span class="badge badge-primary">ISP</span> Segregación de Interfaces: Muchas interfaces específicas son mejores que una general</li>
+                    <li><span class="badge badge-primary">DIP</span> Inversión de Dependencias: Depender de abstracciones, no de implementaciones</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Patrones y Estilos Arquitectónicos</h2>
+            <div class="card architecture">
+                <ul>
+                    <li><span class="highlight">Selección del diseño arquitectónico</span>: Aplicar los estilos más apropiados para el sistema</li>
+                    <li><span class="highlight">Arquitectura centrada en el dominio</span>: Recomendada para sistemas con reglas de negocio complejas</li>
+                    <li><span class="highlight">Microservicios</span>: Dividen la funcionalidad en unidades independientes</li>
+                    <li><span class="highlight">CQRS</span> (Command Query Responsibility Segregation): Separa operaciones de lectura y escritura</li>
+                    <li><span class="highlight">Evitar antipatrones</span>: Conocer y evitar malas prácticas de diseño</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Prácticas de Codificación</h2>
+            <div class="card coding">
+                <ul>
+                    <li><span class="highlight">Calidad del código</span>: Código legible y comprensible con estándares establecidos</li>
+                    <li><span class="highlight">Pruebas de seguridad</span>: SAST/DAST, gestión de vulnerabilidades, pruebas de penetración</li>
+                    <li><span class="highlight">Consultas parametrizadas</span>: Prevenir ataques de inyección SQL</li>
+                    <li><span class="highlight">Control de versiones</span>: Usar Git u otros sistemas para gestionar cambios</li>
+                    <li><span class="highlight">Manejo de errores</span>: Comportamiento predecible, sin exponer datos sensibles</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Documentación y Planificación</h2>
+            <div class="card documentation">
+                <ul>
+                    <li><span class="highlight">Documentación de arquitectura</span>: Diagramas de clases, actividades, secuencias y despliegue</li>
+                    <li><span class="highlight">Modelos de amenaza</span>: Identificar y abordar amenazas potenciales</li>
+                    <li><span class="highlight">Gestión de riesgos</span>: Identificar y abordar riesgos de manera proactiva</li>
+                    <li><span class="highlight">Planificación de pruebas</span>: Alcance, tipos de pruebas, calendario y recursos</li>
+                    <li><span class="highlight">SBOM</span> (Software Bill of Materials): Visibilidad sobre componentes de software</li>
+                    <li><span class="highlight">Control de cambios</span>: Proceso formal para gestionar cambios en requerimientos</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Escalabilidad del Software</h2>
+            <div class="card scalability">
+                <ul>
+                    <li><span class="highlight">Diseño para la escalabilidad</span>: Modularidad, balanceo de carga, bases de datos escalables</li>
+                    <li><span class="highlight">Monitoreo constante</span>: Identificar y solucionar cuellos de botella</li>
+                    <li><span class="highlight">Redundancia</span>: Asegurar alta disponibilidad del sistema</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Inteligencia Artificial en el Desarrollo</h2>
+            <div class="card ai">
+                <ul>
+                    <li>Automatización de tareas repetitivas (código, pruebas, gestión)</li>
+                    <li>Análisis avanzado y solución de problemas</li>
+                    <li>Desarrollo dirigido por datos basado en análisis de usuarios</li>
+                    <li>Colaboración entre humanos y máquinas (ej. GitHub Copilot)</li>
+                    <li>Tecnologías como ML, NLP, visión por computadora, RPA y IA generativa</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="references">
+            <h2>Referencias</h2>
+            <p>Cybersecurity and Infrastructure Security Agency (CISA), NSA, FBI, ACSC, NCSCUK, CCCS, BSI, NCSC-NL, CERT NZ, NCSC-NZ, "Cambio del equilibrio de los riesgos de ciberseguridad: principios y enfoques para el software seguro desde el diseño," Apr. 2023.</p>
+            <p>Domain Logic, "Clean Architecture: qué es, importancia y beneficios para tu empresa," n.d.</p>
+            <p>Microsoft Learn, "Diseño de un microservicio orientado a DDD - .NET," Jun. 2025.</p>
+            <p>SMOWL, "Escalabilidad del software: tipos de sistemas escalables," n.d.</p>
+            <p>Blog, "Inteligencia artificial en desarrollo de software: Tendencias emergentes y futuro," Mar. 2024.</p>
+            <p>MQRInvestigar, "Comparison of agile methodologies for software development," Jan. 2024.</p>
+            <p>David Sabalete Rodriguez, "Los principios SOLID de programación orientada a objetos explicados en Español sencillo," Nov. 2022.</p>
+            <p>hiberus, "Patrones de diseño en microservicios," Jun. 2024.</p>
+            <p>UNAM, REDTIC, "Prácticas para el desarrollo de software," n.d.</p>
+            <p>WIPO, "Standard ST.90 - Recomendaciones para el tratamiento y la comunicación de datos de propiedad intelectual mediante interfaces de programación de aplicaciones (API) para servicios web," Nov. 2022.</p>
+        </section>
+    </div>
+</body>
+</html>
